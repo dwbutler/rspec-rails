@@ -1,6 +1,6 @@
 module RSpec
   module Rails
-    if defined?(ActiveRecord::TestFixtures)
+    if defined?(ActiveRecord::TestFixtures) && ActiveRecord::Base.configurations.present?
       module FixtureSupport
         extend ActiveSupport::Concern
         include RSpec::Rails::SetupAndTeardownAdapter
